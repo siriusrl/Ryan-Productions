@@ -1,0 +1,126 @@
+<html>
+<head>
+  <link rel="icon" href="images/home.png"
+  type="image/x-icon"/>
+  <title>Home</title>
+  <style>
+    /* Add the @font-face rule to import custom fonts */
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    }
+
+    body {
+      background-color: #303030;
+      font-family: 'Open Sans', Arial, sans-serif; /* Use the custom font for the body */
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .container {
+      background-color: #1f1f1f;
+      padding: 40px; /* Adjust the padding value as per your preference */
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+    
+    h1 {
+      font-family: 'Montserrat', Arial, sans-serif; /* Use the custom font for the heading */
+      font-size: 32px;
+      margin-top: 0;
+    }
+    
+    .quiz-options {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    
+    .option {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #555555;
+      padding: 20px 40px;
+      border-radius: 3px;
+      text-align: center;
+      font-family: 'Montserrat', Arial, sans-serif; /* Use the custom font for the options */
+      font-size: 24px;
+      margin: 10px;
+    }
+    
+    .option:hover {
+      background-color: #333333;
+    }
+    
+    .wip {
+      margin-top: 40px;
+      font-family: 'Open Sans', Arial, sans-serif; /* Use the custom font for the message */
+      font-size: 14px;
+      color: #cccccc;
+    }
+    
+    .color-picker {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .color-picker-label {
+      font-family: 'Open Sans', Arial, sans-serif; /* Use the custom font for the color picker label */
+      font-size: 16px;
+      color: #cccccc;
+      margin-right: 10px;
+    }
+
+    /* Button Styles */
+    .my-projects-button {
+      padding: 20px 40px;
+      font-size: 24px;
+      background-color: #555555;
+      color: #ffffff;
+      border: none;
+      border-radius: 3px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      font-family: 'Montserrat', Arial, sans-serif; /* Use the custom font for the button */
+    }
+
+    .my-projects-button:hover {
+      background-color: #333333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Quizzes</h1>
+    <div class="quiz-options">
+      <a href="science.html" class="option">Science Quiz</a>
+      <a href="maths.html" class="option">Maths Quiz</a>
+      <a href="english.html" class="option">English Quiz</a>
+    </div>
+    <div class="color-picker">
+      <label for="colorPicker" class="color-picker-label">Added this for FUN:</label>
+      <input type="color" id="colorPicker">
+    </div>
+    <a href="projects.html" class="my-projects-button">My Other Projects</a>
+    <p class="wip">Work in Progress</p>
+    <p class="copyright">© 2023 Ryan Productions. All rights reserved.</p>
+  </div>
+</body>
+</html>

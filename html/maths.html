@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="images/quiz.png" type="image/x-icon">
+  <title>Math Quiz</title>
+  <style>
+    /* Add the @font-face rule to import custom fonts */
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    }
+
+    body {
+      background-color: #303030;
+      font-family: 'Montserrat', Arial, sans-serif; /* Use the custom font for the body */
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #1f1f1f;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .options label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .options input[type="text"] {
+      display: block;
+      margin-top: 10px;
+      padding: 5px;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #555555;
+      color: #ffffff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Math Quiz</h1>
+
+    <form action="thanks.html">
+      <div class="question">
+        <p>Question 1: What is the value of π (pi) correct to two decimal places?</p>
+        <div class="options">
+          <input type="text" name="q1" placeholder="Enter your answer" required>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>Question 2: Solve the equation: 4x + 7 = 31.</p>
+        <div class="options">
+          <input type="text" name="q2" placeholder="Enter your answer" required>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>Question 3: Which of the following are examples of even numbers?</p>
+        <div class="options">
+          <label><input type="checkbox" name="q3" value="a"> A) 2</label>
+          <label><input type="checkbox" name="q3" value="b"> B) 5</label>
+          <label><input type="checkbox" name="q3" value="c"> C) 8</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>Question 4: What is the square root of 144?</p>
+        <div class="options">
+          <input type="text" name="q4" placeholder="Enter your answer" required>
+        </div>
+      </div>
+
+            <div class="question">
+                <p>Question 5: What is the sum of 7 + 3?</p>
+                <div class="options">
+                  <label><input type="radio" name="q5" value="a"> A) 10</label>
+                  <label><input type="radio" name="q5" value="b"> B) 14</label>
+                  <label><input type="radio" name="q5" value="c"> C) 20</label>
+                </div>
+              </div>
+        
+              <div class="question">
+                <p>Question 6: Solve the following inequality: 2x + 5 > 13.</p>
+                <div class="options">
+                  <input type="text" name="q6" placeholder="Enter your answer" required>
+                </div>
+              </div>
+        
+              <div class="question">
+                <p>Question 7: What is the value of 5 multiplied by 6?</p>
+                <div class="options">
+                  <input type="text" name="q7" placeholder="Enter your answer" required>
+                </div>
+              </div>
+        
+              <div class="question">
+                <p>Question 8: Which of the following are prime numbers?</p>
+                <div class="options">
+                  <label><input type="checkbox" name="q8" value="a"> A) 2</label>
+                  <label><input type="checkbox" name="q8" value="b"> B) 4</label>
+                  <label><input type="checkbox" name="q8" value="c"> C) 7</label>
+                </div>
+              </div>
+        
+              <button type="submit" class="submit-btn">Submit</button>
+            </form>
+          </div>
+        </body>
+        </html>
+        

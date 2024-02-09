@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="images/project.png" type="image/x-icon">
+  <title>Projects</title>
+  <style>
+    /* Add the @font-face rule to import custom fonts */
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    }
+
+    body {
+      background-color: #303030;
+      font-family: 'Open Sans', Arial, sans-serif; /* Use the custom font for the body */
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .container {
+      background-color: #1f1f1f;
+      padding: 40px; /* Adjust the padding value as per your preference */
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+    
+    h1 {
+      font-family: 'Montserrat', Arial, sans-serif; /* Use the custom font for the heading */
+      font-size: 32px;
+      margin-top: 0;
+    }
+    
+    .project-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    
+    .project-button {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #555555;
+      padding: 20px 40px;
+      border-radius: 3px;
+      text-align: center;
+      font-family: 'Montserrat', Arial, sans-serif; /* Use the custom font for the buttons */
+      font-size: 24px;
+      margin: 10px;
+    }
+    
+    .project-button:hover {
+      background-color: #333333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Projects</h1>
+    <div class="project-buttons">
+      <a href="chatbot.html" class="project-button">Talk to an AI</a>
+      <a href="calculator.html" class="project-button">Calculator in HTML</a>
+      <a href="vibes.html" class="project-button">VIBE text</a>
+      <a href="tooltip.html" class="project-button">A Tooltip</a>
+      <a href="emoji.html" class="project-button">Making Emojis</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="images/quiz.png" type="image/x-icon">
+  <title>English Quiz</title>
+  <style>
+    /* Add the @font-face rule to import custom fonts */
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    }
+
+    body {
+      background-color: #303030;
+      font-family: 'Montserrat', Arial, sans-serif; /* Use the custom font for the body */
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #1f1f1f;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .options label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .options input[type="text"] {
+      display: block;
+      margin-top: 10px;
+      padding: 5px;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #555555;
+      color: #ffffff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>English Quiz</h1>
+
+    <form action="thanks.html">
+      <div class="question">
+        <p>Question 1: Select the correct synonyms for "happy":</p>
+        <div class="options">
+          <label><input type="checkbox" name="q1" value="a"> A) Joyful</label>
+          <label><input type="checkbox" name="q1" value="b"> B) Sad</label>
+          <label><input type="checkbox" name="q1" value="c"> C) Angry</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>Question 2: Choose the correct word to complete the sentence: "I _____ to the store yesterday."</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="a"> A) Went</label>
+          <label><input type="radio" name="q2" value="b"> B) Will go</label>
+          <label><input type="radio" name="q2" value="c"> C) Going</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>Question 3: Fill in the blank: "She _____ a book when I saw her."</p>
+        <div class="options">
+          <input type="text" name="q3" placeholder="Enter your answer">
+        </div>
+      </div>
+
+      <div class="question">
+        <p>Question 4: Select the correct antonyms for "large":</p>
+        <div class="options">
+          <label          ><input type="checkbox" name="q4" value="a"> A) Small</label>
+          <label><input type="checkbox" name="q4" value="b"> B) Tall</label>
+          <label><input type="checkbox" name="q4" value="c"> C) Happy</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>Question 5: Choose the correct form of the verb to complete the sentence: "He _______ a good job."</p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="a"> A) Have</label>
+          <label><input type="radio" name="q5" value="b"> B) Has</label>
+          <label><input type="radio" name="q5" value="c"> C) Had</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>Question 6: Arrange the words to form a correct sentence: "is / book / This / my."</p>
+        <div class="options">
+          <input type="text" name="q6" placeholder="Enter your answer">
+        </div>
+      </div>
+
+      <div class="question">
+        <p>Question 7: Choose the correct pronoun to complete the sentence: "_______ is a good friend of mine."</p>
+        <div class="options">
+          <label><input type="radio" name="q7" value="a"> A) He</label>
+          <label><input type="radio" name="q7" value="b"> B) She</label>
+          <label><input type="radio" name="q7" value="c"> C) They</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>Question 8: Fill in the blank: "I have _______ bananas left."</p>
+        <div class="options">
+          <input type="text" name="q8" placeholder="Enter your answer">
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,125 @@
+<html>
+<head>
+ <link rel="icon" href="images/calculator.png"
+  type="image/x-icon"/>
+  <title>Calculator</title>
+  <style>
+    /* Add the @font-face rule to import custom fonts */
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    }
+
+    body {
+      background-color: #303030;
+      font-family: 'Open Sans', Arial, sans-serif; /* Use the custom font for the body */
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .container {
+      background-color: #1f1f1f;
+      padding: 40px; /* Adjust the padding value as per your preference */
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+    
+    h1 {
+      font-family: 'Montserrat', Arial, sans-serif; /* Use the custom font for the heading */
+      font-size: 32px;
+      margin-top: 0;
+    }
+    
+    .calculator {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+      text-align: center;
+      width: 600px; /* Make it 2x bigger than the original width */
+      padding: 40px; /* Make it 2x bigger than the original padding */
+    }
+    
+    .calculator input {
+      grid-column: 1 / span 4;
+      padding: 20px; /* Make it 2x bigger than the original padding */
+      font-size: 40px; /* Make it 2x bigger than the original font size */
+      text-align: right;
+    }
+    
+    .calculator button {
+      padding: 30px; /* Make it 2x bigger than the original padding */
+      font-size: 36px; /* Make it 2x bigger than the original font size */
+      background-color: #555555;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Montserrat', Arial, sans-serif; /* Use the custom font for the buttons */
+    }
+    
+    .calculator button:hover {
+      background-color: #333333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calculator</h1>
+    <div class="calculator">
+      <input type="text" id="result" readonly>
+      <button onclick="appendNumber(7)">7</button>
+      <button onclick="appendNumber(8)">8</button>
+      <button onclick="appendNumber(9)">9</button>
+      <button onclick="appendOperator('+')">+</button>
+      <button onclick="appendNumber(4)">4</button>
+      <button onclick="appendNumber(5)">5</button>
+      <button onclick="appendNumber(6)">6</button>
+      <button onclick="appendOperator('-')">-</button>
+      <button onclick="appendNumber(1)">1</button>
+      <button onclick="appendNumber(2)">2</button>
+      <button onclick="appendNumber(3)">3</button>
+      <button onclick="appendOperator('*')">*</button>
+      <button onclick="appendNumber(0)">0</button>
+      <button onclick="appendOperator('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="appendOperator('/')">/</button>
+      <button onclick="clearInput()">C</button>
+    </div>
+    <script>
+      let inputField = document.getElementById('result');
+
+      function appendNumber(number) {
+        inputField.value += number;
+      }
+
+      function appendOperator(operator) {
+        inputField.value += operator;
+      }
+
+      function calculate() {
+        try {
+          const result = eval(inputField.value);
+          inputField.value = result;
+        } catch (error) {
+          inputField.value = 'Error';
+        }
+      }
+
+      function clearInput() {
+        inputField.value = '';
+      }
+    </script>
+  </div>
+</body>
+</html>

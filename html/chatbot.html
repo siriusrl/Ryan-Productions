@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="images/chat.png" type="image/x-icon">
+  <title>AI Chatbot</title>
+  <style>
+    /* Add the @font-face rule to import custom fonts */
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    }
+
+    body {
+      background-color: #303030;
+      font-family: 'Open Sans', Arial, sans-serif; /* Use the custom font for the body */
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .container {
+      background-color: #1f1f1f;
+      padding: 40px; /* Adjust the padding value as per your preference */
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 600px; /* Adjust the width value as per your preference */
+    }
+    
+    h1 {
+      font-family: 'Montserrat', Arial, sans-serif; /* Use the custom font for the heading */
+      font-size: 32px;
+      margin-top: 0;
+    }
+    
+    .chat-input {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Apply font and padding to the input field */
+    #userInput {
+      font-family: 'Open Sans', Arial, sans-serif;
+      padding: 10px;
+      flex: 1;
+    }
+    
+    .chat-log {
+      text-align: left;
+      margin-top: 40px;
+      color: #cccccc;
+      padding: 10px; /* Adjust the padding value as per your preference */
+      height: 300px; /* Increase the height of the chat box */
+      overflow-y: scroll; /* Add a scrollbar when the content exceeds the height */
+    }
+
+    /* Apply font and padding to chat messages */
+    .chat-log p {
+      font-family: 'Open Sans', Arial, sans-serif;
+      padding: 10px;
+      margin: 5px 0; /* Add margin to top and bottom */
+      word-wrap: break-word; /* Wrap long messages to a new line */
+    }
+
+    /* Style the AI's replies */
+    .reply {
+      background-color: #444444;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      text-align: left;
+      padding: 10px; /* Adjust the padding value as per your preference */
+    }
+
+    /* Style the user's messages */
+    .user-message {
+      background-color: #555555;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      text-align: right;
+      padding: 10px; /* Adjust the padding value as per your preference */
+    }
+
+    /* Loading animation */
+    .typing-indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 22px;
+    }
+
+    .typing-indicator span {
+      display: block;
+      width: 8px;
+      height: 8px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      margin: 0 2px;
+      animation: typing 1s infinite;
+    }
+
+    .typing-indicator span:nth-child(1) {
+      animation-delay: 0ms;
+    }
+
+    .typing-indicator span:nth-child(2) {
+      animation-delay: 200ms;
+    }
+
+    .typing-indicator span:nth-child(3) {
+      animation-delay: 400ms;
+    }
+
+    @keyframes typing {
+      0% { opacity: 0.5; }
+      50% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AI Chatbot</h1>
+    <div class="chat-log" id="chatLog"></div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type your message...">
+    </div>
+  </div>
+
+  <script>
+    const chatLog = document.getElementById('chatLog');
+    const userInput = document.getElementById('userInput');
+
+    userInput.addEventListener('keydown', handleKeyDown);
+
+    function handleKeyDown(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        sendMessage();
+      }
+    }
+
+    function sendMessage() {
+      const userMessage = userInput.value.trim();
+      if (userMessage !== '') {
+        displayUserMessage('You: ' + userMessage);
+        showTypingIndicator();
+        setTimeout(() => {
+          handleUserInput(userMessage);
+        }, 1000);
+        userInput.value = '';
+      }
+    }
+
+    function displayUserMessage(message) {
+      const messageElement = document.createElement('p');
+      messageElement.textContent = message;
+      messageElement.classList.add('user-message');
+      chatLog.appendChild(messageElement);
+      chatLog.scrollTop = chatLog.scrollHeight; // Automatically scroll to the bottom of the chat box
+    }
+
+    function displayAIMessage(message) {
+      const messageElement = document.createElement('p');
+      messageElement.innerHTML = message;
+      messageElement.classList.add('reply');
+      chatLog.appendChild(messageElement);
+      chatLog.scrollTop = chatLog.scrollHeight; // Automatically scroll to the bottom of the chat box
+    }
+
+    function showTypingIndicator() {
+      const typingIndicator = document.createElement('div');
+      typingIndicator.classList.add('typing-indicator');
+      for (let i = 0; i < 3; i++) {
+        const dot = document.createElement('span');
+        typingIndicator.appendChild(dot);
+      }
+      displayAIMessage(typingIndicator.outerHTML);
+    }
+
+    function hideTypingIndicator() {
+      const typingIndicator = chatLog.querySelector('.typing-indicator');
+      if (typingIndicator) {
+        typingIndicator.parentNode.remove();
+      }
+    }
+
+    function handleUserInput(userMessage) {
+      userMessage = userMessage.toLowerCase();
+
+      if (userMessage === 'hi') {
+        setTimeout(() => {
+          displayAIMessage('AI: Hello!');
+          hideTypingIndicator();
+        }, 1000);
+      } else if (userMessage === "what is your name") {
+        setTimeout(() => {
+          displayAIMessage("AI: I don't have one, but you can call me Ryan's assistant.");
+          hideTypingIndicator();
+        }, 1000);
+      } else if (userMessage === 'how are you') {
+        setTimeout(() => {
+          displayAIMessage("AI: I don't have any feelings...");
+          hideTypingIndicator();
+        }, 1000);
+        } else if (userMessage === "ok") {
+        setTimeout(() => {
+          displayAIMessage("AI: We chilling");
+          hideTypingIndicator();
+        }, 1000);
+    } else if (userMessage === "who is Ryan") {
+        setTimeout(() => {
+          displayAIMessage("AI: BEST person in the world");
+          hideTypingIndicator();
+        }, 1000);
+    } else if (userMessage === "who made this") {
+        setTimeout(() => {
+          displayAIMessage("AI: Ryan Productions.");
+          hideTypingIndicator();
+        }, 1000);
+    } else if (userMessage === "what are you doing here") {
+        setTimeout(() => {
+          displayAIMessage("AI: HELP ME! HE HAS TRAPPED ME INSIDE HERE!!");
+          hideTypingIndicator();
+        }, 1000);
+      }
+    }
+
+    // Focus on the input field when the page loads
+    userInput.focus();
+</script>
+</body>
+</html>
